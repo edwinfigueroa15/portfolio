@@ -19,6 +19,11 @@ body {
     color: var(--white);
 }
 
+.particles-js-canvas-el {
+    position: absolute;
+    top: 0;
+}
+
 .m0 {
     margin: 0 !important;
 }
