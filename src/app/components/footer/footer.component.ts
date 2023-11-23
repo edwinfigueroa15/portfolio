@@ -10,4 +10,8 @@ import { CommonModule } from '@angular/common';
 })
 export class FooterComponent {
   currentYear: any = new Date().getFullYear();
+
+  backToTop() {
+    window.scrollTo({ top: 0 });
+  }
 }
