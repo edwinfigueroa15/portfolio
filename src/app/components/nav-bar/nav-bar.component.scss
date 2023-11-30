@@ -3,12 +3,13 @@
     top: 0;
     left: 0;
     width: 100%;
-    padding: .5rem 5%;
+    padding: .4rem 5%;
     background-color: var(--color-nav);
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 9999;
+    transition: padding ease 1s;
 }
 
 .logo {
@@ -45,7 +46,7 @@
 
 @media screen and (min-width: 768px) {
     .container-nav {
-        padding: 1rem 10%;
+        padding: .4rem 10%;
     }
 
     .logo {
@@ -94,5 +95,17 @@
 
     #check:checked~.navbar {
         height: 100vh;
+    }
+}
+
+.down-window {
+    @media screen and (min-width: 768px) {
+        padding: .7rem;
+        justify-content: center;
+        transition: all ease 1s;
+
+        img {
+            display: none;
+        }
     }
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import Components from './components/index';
@@ -13,9 +13,11 @@ declare var particlesJS: any;
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
+  
   ngOnInit() {
     particlesJS('particles-js', ParticlesConfig, function () {
       console.log('callback - particles.js config loaded');
     });
   }
+  
 }

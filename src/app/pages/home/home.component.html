@@ -1,6 +1,6 @@
 <!-- HEADER -->
 <section class="container-home-header" id="home">
-    <div class="row h100 m0">
+    <div class="row h100 m-0">
         <div class="col col-12 col-md-6 h100">
             <div class="container-info">
 
@@ -36,9 +36,9 @@
 
 <!-- About me -->
 <section class="container-home-about-me pt-5 pb-5" id="aboutMe">
-    <div class="row m0 w100">
+    <div class="row m-0 w100">
         <div class="col col-12 detail-profile mb-1 mb-sm-2">
-            <h2 class="title mb-2 mb-sm-4">{{ 'Sobre mí' | uppercase }}</h2>
+            <h2 class="title mb-2 mb-sm-4">SOBRE MÍ</h2>
             <p>
                 Como desarrollador he adquirido habilidades en una amplia gama de tecnologías. Mi interés 
                 por la tecnología y mi compromiso con la calidad me impulsan a desarrollar soluciones 
@@ -46,10 +46,10 @@
                 enfrentar los desafíos futuros en el campo de la tecnología.
             </p>
         </div>
-        <div class="col col-12 col-sm-5 img-profile">
+        <div class="col col-12 col-md-5 img-profile">
             <img src="assets/images/profile.jpg" >
         </div>
-        <div class="col col-12 col-sm-6">
+        <div class="col col-12 col-md-6">
             <h2 class="subtitle">Habilidades</h2>
             <div class="container-tag-skills">
                 <div class="tag-skill" style="--background-tag: #111; --color-text: #fff; --color-icon: #f5dd1b">
@@ -137,8 +137,42 @@
     </div>
 </section>
 
-<!-- Experience -->
-<section id="experience">
-    <h1>Experience</h1>
-    
+<!-- My Journey -->
+<section class="bg-primary w100 pt-5 pb-5 mt-2 mt-sm-4" id="myJourney">
+    <div class="container-experience" >
+        <div class="w100 text-center"><h2 class="title color-secondary mb-2 mb-sm-4">MI TRAYECTORIA</h2></div>
+        <div class="row m-0 w100 test-order">
+
+            @for (item of experienceList; track $index) {
+                <div class="col col-12 col-md-6 subtitle color-white f-bold test">
+                    <div class="card-container">
+                        <p class="p-0 m-0 color-secondary"><i class='bx bxs-calendar'></i> {{ item.date }} </p>
+                        <h3 class="subtitle color-white f-bold">
+                            {{ item.title }} <span class="show-line">-</span> 
+                            <a [href]="item.company.url" target="_blank" rel="noopener noreferrer">{{ item.company.text }}</a>
+                        </h3>
+                        <div class="container-skills color-white">
+                            <ul>
+                                @for (technology of item.technologies; track $index) {
+                                    <li>{{ technology }}</li>
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            }
+
+        </div>
+    </div>
+</section>
+
+<!-- Projects -->
+<section class="container-home-about-me pt-5 pb-5" id="projects">
+    <div class="row m-0 w100">
+        <div class="col col-12 detail-profile mb-1 mb-sm-2">
+            <h2 class="title mb-2 mb-sm-4">MIS PROYECTOS</h2>
+        </div>
+
+
+    </div>
 </section>

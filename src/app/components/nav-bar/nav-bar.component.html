@@ -1,4 +1,4 @@
-<div class="container-nav">
+<div #containerNav class="container-nav" [ngClass]="{'down-window': positionScrollDown}">
     <a href="#" class="logo"><img src="/assets/images/logo_2.jpeg" alt="" /></a>
 
     <input type="checkbox" id="check" name="check" [(ngModel)]="check">
@@ -10,6 +10,7 @@
     <nav class="navbar">
         <a href="#" (click)="handleClick($event, 'home')">Inicio</a>
         <a href="#" (click)="handleClick($event, 'aboutMe')">Sobre Mí</a>
-        <a href="#" (click)="handleClick($event, 'experience')">Experiencia</a>
+        <a href="#" (click)="handleClick($event, 'myJourney')">Mi trayectoria</a>
+        <a href="#" (click)="handleClick($event, 'projects')">Proyectos</a>
     </nav>
 </div>

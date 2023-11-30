@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
@@ -11,7 +11,15 @@ import { FormsModule } from '@angular/forms';
 })
 export class NavBarComponent {
 
-  check: any = false;
+  positionScrollDown: boolean = false;
+  check: boolean = false;
+
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    const scroll: HTMLElement = document.documentElement;
+    this.positionScrollDown = scroll.scrollTop > (scroll.clientHeight-100);
+
+  }
 
   handleClick(event: Event, id: string) {
     event.preventDefault();
