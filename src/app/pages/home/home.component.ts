@@ -15,7 +15,7 @@ export class HomeComponent {
 
   experienceList: Experience[] = [
     {
-      date: 'Marzo. 2023 - Actualmente',
+      date: 'Marzo. 2023 - Diciembre. 2023',
       title: 'Desarrollador Full Stack',
       company: {
         url: 'https://www.fundacioncapital.org',
