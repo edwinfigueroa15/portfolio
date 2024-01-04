@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Experience, Project } from '../../interfaces/home.interface';
 import { PdfService } from '../../services/pdf.service';
-import saveAs from 'file-saver';
+import { saveAs } from 'file-saver';
 
 @Component({
   selector: 'app-home',
