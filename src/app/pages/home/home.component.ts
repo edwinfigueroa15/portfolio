@@ -80,7 +80,7 @@ export class HomeComponent {
     {
       img: 'imc-app.png',
       title: 'IMC',
-      description: 'Desarrollado para tener en una aplicacion con varias funcionalidades que calculen el estado de salud.',
+      description: 'Desarrollado para tener en una aplicación con varias funcionalidades que calculen el estado de salud.',
       link: 'https://imc-ionic.web.app'
     }
   ]
