@@ -26,6 +26,11 @@
                                 <i class='bx bx-envelope'></i>
                             </a>
                         </div>
+                        <div>
+                            <a href="" title="CV" rel="noreferrer" target="_blank" (click)="downloadCV($event)">
+                                <i class='bx bx-id-card'></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
 
@@ -142,7 +147,6 @@
     <div class="container-experience" >
         <div class="w100 text-center"><h2 class="title color-secondary mb-2 mb-sm-4">MI TRAYECTORIA</h2></div>
         <div class="row m-0 w100 test-order">
-
             @for (item of experienceList; track $index) {
                 <div class="col col-12 col-md-6 subtitle color-white f-bold test">
                     <div class="card-container">
@@ -169,10 +173,23 @@
 <!-- Projects -->
 <section class="container-home-about-me pt-5 pb-5" id="projects">
     <div class="row m-0 w100">
-        <div class="col col-12 detail-profile mb-1 mb-sm-2">
+        <div class="col col-12 detail-profile mb-1 mb-sm-0">
             <h2 class="title mb-2 mb-sm-4">MIS PROYECTOS</h2>
         </div>
 
-
+        <div class="col col-12">
+            <div class="row m-0 w100 flex-row flex-center align-center gap-3">
+                @for (item of projectList; track $index) {
+                    <div class="card m-0 p-0 col col-12 col-sm-6 col-md-4 col-lg-3">
+                        <div class="card-img">
+                            <img [src]="'assets/images/projects/'+item.img" alt="">
+                        </div>
+                        <h2>{{ item.title }}</h2>
+                        <p>{{ item.description }}</p>
+                        <a [href]="item.link" target="_blank" rel="noopener noreferrer">Ver proyecto en linea</a>
+                    </div>
+                }
+            </div>
+        </div>
     </div>
 </section>

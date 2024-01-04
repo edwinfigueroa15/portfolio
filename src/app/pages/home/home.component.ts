@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Experience } from '../../interfaces/home.interface';
+import { Experience, Project } from '../../interfaces/home.interface';
+import { PdfService } from '../../services/pdf.service';
+import saveAs from 'file-saver';
 
 @Component({
   selector: 'app-home',
@@ -73,5 +75,27 @@ export class HomeComponent {
       ]
     }
   ]
-  
+
+  projectList: Project[] = [
+    {
+      img: 'imc-app.png',
+      title: 'IMC',
+      description: 'Desarrollado para tener en una aplicacion con varias funcionalidades que calculen el estado de salud.',
+      link: 'https://imc-ionic.web.app'
+    }
+  ]
+
+  private _pdfService = inject(PdfService);
+
+  async downloadCV(event: any) {
+    event.preventDefault();
+    try {
+      const response = await this._pdfService.downloadCV();
+      const file = new Blob([response], { type: 'application/pdf' });
+      saveAs(file, 'CV_Edwin_Alberto_Figueroa.pdf');
+    } catch (error) {
+      alert("Error al descargar el CV");
+    }
+  }
+
 }
